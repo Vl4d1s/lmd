@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import appLogo from '@/assets/app-logo.png';
-import NavigationLinks from '@/components/navbar/navigation-links/navigation-links';
+import NavigationLinks from '@/components/layout/navbar/navigation-links/navigation-links';
 import { navigationLinks } from '@/configurations/navigation-links';
 
 export default function Navbar() {

@@ -1,6 +1,6 @@
 import './globals.css';
-import Container from '@/components/container';
-import Navbar from '@/components/navbar/navbar';
+import Container from '@/components/layout/container';
+import Navbar from '@/components/layout/navbar/navbar';
 export const metadata = {
   title: 'lmd',
   description: 'All your college needs in one place',

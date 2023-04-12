@@ -1,10 +1,15 @@
-import React from 'react';
+import { Suspense } from 'react';
 import DrivesList from '@/components/drives-list';
+import Loader from '@/components/Loader';
+import { getDrives } from '@/helpers/api-utils';
 
 export const metadata = {
   title: 'lmd | Drives',
 };
-export default function Drives() {
+
+export default async function Page() {
+  const drivesData = getDrives();
+
   return (
     <div className="container mx-auto py-8">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -14,7 +19,9 @@ export default function Drives() {
             All external and internal drives are listed here.
           </p>
         </div>
-        <DrivesList />
+        <Suspense fallback={<Loader />}>
+          <DrivesList promise={drivesData} />
+        </Suspense>
       </div>
     </div>
   );

@@ -1,27 +1,35 @@
-import React from 'react';
-import DrivesListItem from '@/components/drives-list-item';
+'use client';
 
-export default function DrivesList() {
-  const drives = [
-    {
-      id: '1',
-      firstName: 'Vladis',
-      lastName: 'Markin',
-      year: '2022',
-      type: 'External',
-      link: 'https://google.com',
-    },
-  ];
+import { useRouter } from 'next/navigation';
+import DrivesListItem from '@/components/drives-list-item';
+import { DriveItem } from '@/types';
+
+interface DrivesListItemProps {
+  promise: Promise<DriveItem[]>;
+}
+
+export default async function DrivesList({ promise }: DrivesListItemProps) {
+  const router = useRouter();
+
+  // Wait for the drives promise to resolve
+  const drives = await promise;
+  const onClickHandler = async (link: string) => {
+    if (link) {
+      await router.push(link);
+    }
+  };
+
+  if (!drives.length) {
+    return <div className="p-6">No drives found :(</div>;
+  }
+
   return (
     <ul className="divide-y divide-gray-300">
-      {drives.map(drive => (
+      {drives.map((drive, index) => (
         <DrivesListItem
-          firstName={drive.firstName}
-          id={drive.id}
-          key={drive.id}
-          lastName={drive.lastName}
-          type={drive.type}
-          year={drive.year}
+          drive={drive}
+          key={index}
+          onClick={() => onClickHandler(drive.link)}
         />
       ))}
     </ul>

@@ -1,16 +1,15 @@
 import Image from 'next/image';
-import React from 'react';
+import { Name } from '@/types';
+import { getInitials } from '@/helpers/string-utils';
 
 export default function Avatar({
-  firstName,
-  lastName,
+  name,
   image,
 }: {
-  firstName: string;
-  lastName: string;
+  name: Name;
   image?: string;
 }) {
-  const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`;
+  const initials = getInitials(name);
 
   return (
     <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gray-300 mr-4">
