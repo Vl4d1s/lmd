@@ -25,14 +25,11 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    // Possible errors
     'no-console': 'warn',
-    // Best practices
     'dot-notation': 'error',
     'no-else-return': 'error',
     'no-floating-decimal': 'error',
     'no-sequences': 'error',
-    // Stylistic
     'array-bracket-spacing': 'error',
     'computed-property-spacing': ['error', 'never'],
     curly: 'error',
@@ -40,7 +37,7 @@ module.exports = {
     'no-unneeded-ternary': 'error',
     'one-var-declaration-per-line': 'error',
     '@typescript-eslint/no-var-requires': 'off',
-
+    '@typescript-eslint/ban-ts-comment': 'off',
     quotes: [
       'error',
       'single',

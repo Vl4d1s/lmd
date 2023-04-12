@@ -20,6 +20,7 @@ export default async function Page() {
           </p>
         </div>
         <Suspense fallback={<Loader />}>
+          {/* @ts-ignore */}
           <DrivesList promise={drivesData} />
         </Suspense>
       </div>
