@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const drivesData = getDrives();
+  const drivesData = await getDrives();
 
   return (
     <div className="container mx-auto py-8">
@@ -20,8 +20,7 @@ export default async function Page() {
           </p>
         </div>
         <Suspense fallback={<Loader />}>
-          {/* @ts-ignore */}
-          <DrivesList promise={drivesData} />
+          <DrivesList drives={drivesData} />
         </Suspense>
       </div>
     </div>

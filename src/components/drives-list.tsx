@@ -5,14 +5,11 @@ import DrivesListItem from '@/components/drives-list-item';
 import { DriveItem } from '@/types';
 
 interface DrivesListItemProps {
-  promise: Promise<DriveItem[]>;
+  drives: DriveItem[];
 }
 
-export default async function DrivesList({ promise }: DrivesListItemProps) {
+export default function DrivesList({ drives }: DrivesListItemProps) {
   const router = useRouter();
-
-  // Wait for the drives promise to resolve
-  const drives = await promise;
 
   const onClickHandler = async (link: string) => {
     if (link) {
