@@ -13,6 +13,7 @@ export default async function DrivesList({ promise }: DrivesListItemProps) {
 
   // Wait for the drives promise to resolve
   const drives = await promise;
+
   const onClickHandler = async (link: string) => {
     if (link) {
       await router.push(link);
