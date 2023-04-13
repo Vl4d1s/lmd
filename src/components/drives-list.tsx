@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import DrivesListItem from '@/components/drives-list-item';
+import DrivesListItem from '@/components/drives-list-item/drives-list-item';
 import { DriveItem } from '@/types';
 
 interface DrivesListItemProps {

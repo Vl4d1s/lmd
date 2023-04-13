@@ -1,7 +1,8 @@
-import { AcademicCapIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import Avatar from '@/components/avatar';
 import { DriveItem } from '@/types';
-import { getDriveName, getDriveYear } from '@/helpers/string-utils';
+import { getDriveName } from '@/helpers/string-utils';
+import Year from '@/components/drives-list-item/year/Year';
 
 interface DrivesListItemProps {
   drive: DriveItem;
@@ -12,7 +13,6 @@ export default function DrivesListItem({
   onClick,
 }: DrivesListItemProps) {
   const driveName = getDriveName(name);
-  const driveYear = getDriveYear(year);
 
   return (
     <li
@@ -27,15 +27,8 @@ export default function DrivesListItem({
           </div>
         </div>
         <div className="flex items-center ml-auto">
-          <div className="flex items-center">
-            <div className="flex items-start">
-              <AcademicCapIcon className="text-gray-500 h-3 w-3 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-              <span className="text-gray-600 text-xs sm:text-sm">
-                {driveYear}
-              </span>
-            </div>
-          </div>
-          <ChevronRightIcon className="text-gray-500 h-3 w-3 sm:h-4 sm:w-4 ml-10" />
+          <Year year={year} />
+          <ChevronRightIcon className="text-gray-500 h-3 w-3 sm:h-4 sm:w-4 ml-4 sm:ml-4" />
         </div>
       </div>
     </li>

@@ -7,4 +7,4 @@ export const getDriveName = (name: Name): string =>
   `${name.first} ${name?.last || ''}`;
 
 export const getDriveYear = (year?: Year): string =>
-  year ? `${year.start} - ${year.end}` : 'unknown year';
+  year ? `${year.start} - ${year.end}` : '';
