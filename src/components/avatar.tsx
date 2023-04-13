@@ -12,7 +12,7 @@ export default function Avatar({
   const initials = getInitials(name);
 
   return (
-    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gray-300 mr-4">
+    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gray-300 mr-4 h-8 w-8 sm:h-12 sm:w-12">
       {image ? (
         <Image
           alt="Avatar"
@@ -22,7 +22,9 @@ export default function Avatar({
           width={40}
         />
       ) : (
-        <span className="text-xl font-bold text-gray-600">{initials}</span>
+        <span className="text-sm lg:text-xl xl:text-xl md:text-xl  font-bold text-gray-600">
+          {initials}
+        </span>
       )}
     </div>
   );
