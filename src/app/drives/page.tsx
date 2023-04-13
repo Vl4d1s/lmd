@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import DrivesList from '@/components/drives-list';
-import Loader from '@/components/Loader';
+import Loader from '@/components/loader';
 import { getDrives } from '@/helpers/api-utils';
 
 export const metadata = {
