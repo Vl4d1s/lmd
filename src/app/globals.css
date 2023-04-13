@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg-global: #f3f4f6;
+}
+
+body {
+    background-color: var(--bg-global);
+}
