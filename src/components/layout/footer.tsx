@@ -10,11 +10,12 @@ export default function Footer() {
           >
             Vladis Markin
           </a>
+          {' | '}
           <a
             className="hover:text-blue-500"
             href="https://github.com/Vl4d1s/lmd"
           >
-            {' | '} Source code
+            Source code
           </a>
         </p>
       </div>
