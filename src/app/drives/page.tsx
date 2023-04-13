@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import DrivesList from '@/components/drives-list';
 import Loader from '@/components/loader';
 import { getDrives } from '@/helpers/api-utils';
+import googleDriveLogo from '@/assets/google-drive-logo.png';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'lmd | Drives',
@@ -13,12 +15,19 @@ export default async function Page() {
   return (
     <div className="container mx-auto py-8">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="p-6 flex flex-col sm:flex-row justify-between">
-          <div className="mb-4 sm:mb-0">
-            <h2 className="text-lg font-semibold">Drives</h2>
-            <p className="text-gray-600">
-              All external and internal drives are listed here.
-            </p>
+        <div className="p-6 flex flex-col sm:flex-row ">
+          <div className="flex items-center mb-4 sm:mb-0">
+            <Image
+              alt="Image description"
+              className="mr-2 h-12 w-12"
+              src={googleDriveLogo}
+            />
+            <div>
+              <h2 className="text-lg font-semibold">Drives</h2>
+              <p className="text-gray-600">
+                All external and internal drives are listed here.
+              </p>
+            </div>
           </div>
         </div>
         <Suspense fallback={<Loader />}>
