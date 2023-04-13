@@ -16,7 +16,7 @@ export default function DrivesListItem({
 
   return (
     <li
-      className="p-4 sm:p-6 hover:bg-gray-100 cursor-pointer"
+      className="p-4 sm:p-6 sm:hover:bg-gray-100 hover:bg-transparent cursor-pointer"
       onClick={onClick}
     >
       <div className="flex justify-between items-center">
