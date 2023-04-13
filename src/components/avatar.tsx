@@ -22,7 +22,7 @@ export default function Avatar({
           width={40}
         />
       ) : (
-        <span className="text-sm lg:text-xl xl:text-xl md:text-xl  font-bold text-gray-600">
+        <span className="text-sm lg:text-xl xl:text-xl md:text-xl font-bold text-gray-600">
           {initials}
         </span>
       )}
