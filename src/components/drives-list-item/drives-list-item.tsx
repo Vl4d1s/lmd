@@ -9,7 +9,7 @@ interface DrivesListItemProps {
   onClick: () => void;
 }
 export default function DrivesListItem({
-  drive: { name, year },
+  drive: { name, year, image },
   onClick,
 }: DrivesListItemProps) {
   const driveName = getDriveName(name);
@@ -21,7 +21,7 @@ export default function DrivesListItem({
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center">
-          <Avatar name={name} />
+          <Avatar image={image} name={name} />
           <div className="ml-2 sm:ml-4">
             <div className="text-sm sm:text-base">{driveName}</div>
           </div>

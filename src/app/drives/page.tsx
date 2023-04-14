@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
+import Image from 'next/image';
 import DrivesList from '@/components/drives-list';
 import Loader from '@/components/loader';
 import { getDrives } from '@/helpers/api-utils';
 import googleDriveLogo from '@/assets/google-drive-logo.png';
-import Image from 'next/image';
 
 export const metadata = {
   title: 'lmd | Drives',

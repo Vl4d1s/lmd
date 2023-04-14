@@ -6,6 +6,7 @@ import Link from 'next/link';
 import appLogo from '@/assets/app-logo.png';
 import NavigationLinks from '@/components/layout/navbar/navigation-links/navigation-links';
 import { navigationLinks } from '@/configurations/navigation-links';
+import LoginBtn from '@/components/login-btn';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,12 +27,13 @@ export default function Navbar() {
             </div>
             <NavigationLinks links={navigationLinks} platform="desktop" />
           </div>
-          <div className="-mr-2 flex items-center sm:hidden">
+          <div className="flex items-center">
+            <LoginBtn />
             <button
               aria-expanded="false"
               aria-label="Main menu"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900
-              hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition duration-150 ease-in-out"
+              className="ml-4 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900
+          hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition duration-150 ease-in-out sm:hidden"
               onClick={toggleMobileMenu}
               type="button"
             >

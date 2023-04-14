@@ -22,9 +22,9 @@ const NavigationLinks = ({ links, platform }: NavigationLinksProps) => {
         <Link
           className={`${
             activeLink === link.href
-              ? 'border-blue-500 text-blue-500 font-bold border-l-4'
+              ? 'border-indigo-600 text-indigo-600 font-bold border-l-4'
               : 'border-transparent text-gray-500'
-          } block hover:text-blue-500 pl-3 pr-4 py-2 text-lg border-blue-500 font-medium focus:outline-none focus:bg-gray-50 focus:text-blue-500`}
+          } block hover:text-indigo-600 pl-3 pr-4 py-2 text-lg border-indigo-600 font-medium focus:outline-none focus:bg-gray-50 focus:text-indigo-600`}
           href={link.href}
           key={link.name}
           onClick={() => handleLinkClick(link.href)}
@@ -39,8 +39,8 @@ const NavigationLinks = ({ links, platform }: NavigationLinksProps) => {
         <Link
           className={`inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 ${
             activeLink === link.href
-              ? 'border-blue-500 text-blue-500 font-bold hover:border-gray-300 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out'
-              : 'border-transparent text-gray-500 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition duration-150 ease-in-out'
+              ? 'border-indigo-600 text-indigo-600 font-bold hover:border-gray-300 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out'
+              : 'border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none focus:text-indigo-600 transition duration-150 ease-in-out'
           } ${index > 0 ? 'ml-6' : ''}`}
           href={link.href}
           key={link.name}
