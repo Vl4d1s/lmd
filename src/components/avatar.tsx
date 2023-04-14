@@ -12,7 +12,7 @@ export default function Avatar({
   const initials = getInitials(name);
 
   return (
-    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gray-300 mr-4 h-8 w-8 sm:h-12 sm:w-12">
+    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gray-300 h-8 w-8 sm:h-12 sm:w-12">
       {image ? (
         <Image
           alt="Avatar"
