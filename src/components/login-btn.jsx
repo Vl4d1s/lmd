@@ -28,7 +28,7 @@ export default function LoginBtn() {
       className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
       onClick={() => signIn()}
     >
-      Sign in
+      Login in
     </button>
   );
 }
