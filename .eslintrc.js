@@ -38,6 +38,7 @@ module.exports = {
     'one-var-declaration-per-line': 'error',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     quotes: [
       'error',
       'single',
