@@ -2,7 +2,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import Avatar from '@/components/avatar/avatar';
 import { DriveItem } from '@/types';
 import { getDriveName } from '@/helpers/string-utils';
-import Year from '@/components/drives-list-item/year/Year';
+import Year from '@/components/drives-list-item/year/year';
 
 interface DrivesListItemProps {
   drive: DriveItem;
