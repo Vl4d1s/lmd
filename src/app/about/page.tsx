@@ -2,7 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import aboutImage from '@/assets/about_image.jpg';
 
-function About() {
+export const metadata = {
+  title: 'lmd | About',
+};
+export default function page() {
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center my-8">About Me</h1>
@@ -53,5 +56,3 @@ function About() {
     </div>
   );
 }
-
-export default About;
