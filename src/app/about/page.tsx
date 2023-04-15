@@ -7,8 +7,10 @@ function About() {
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center my-8">About Me</h1>
       <div className="flex flex-col md:flex-row justify-center items-center">
-        <div className="md:w-1/2">
-          <Image alt="About Us" height={400} src={aboutImage} width={500} />
+        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+          <div className="w-full ">
+            <Image alt="About Us" src={aboutImage} />
+          </div>
         </div>
         <div className="md:w-1/2 md:pl-10">
           <p className="text-lg font-medium my-4">
@@ -37,14 +39,16 @@ function About() {
             through their first steps in this exciting and rapidly evolving
             industry.
           </p>
-          Feel free to contact me on{' '}
-          <a
-            className="text-blue-500"
-            href="https://www.linkedin.com/in/vladismarkin"
-          >
-            Linkedin
-          </a>
-          .
+          <p className="text-lg font-medium my-4">
+            Feel free to contact me on{' '}
+            <a
+              className="text-blue-500"
+              href="https://www.linkedin.com/in/vladismarkin"
+            >
+              Linkedin
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>
