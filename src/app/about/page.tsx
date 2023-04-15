@@ -16,8 +16,7 @@ function About() {
           <p className="text-lg font-medium my-4">
             Hello there, my name is Vladis and I am proud to be a graduate of
             SCE College where I studied from 2017 to 2021. Currently, I am
-            working as an Infrastructure Software Engineer at Wix.com, a dynamic
-            company that is at the forefront of web development and design.
+            working as an Infrastructure Software Engineer at Wix.com.
           </p>
           <p className="text-lg font-medium my-4">
             During my first year of studies, I quickly realized that there was
