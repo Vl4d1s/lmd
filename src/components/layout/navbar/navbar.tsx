@@ -6,7 +6,7 @@ import Link from 'next/link';
 import appLogo from '@/assets/app-logo.png';
 import NavigationLinks from '@/components/layout/navbar/navigation-links/navigation-links';
 import { navigationLinks } from '@/configurations/navigation-links';
-import LoginBtn from '@/components/login-btn';
+import LoginBtn from '@/components/login-btn/login-btn';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

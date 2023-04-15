@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import Avatar from '@/components/avatar';
+import Avatar from '@/components/avatar/avatar';
 import { DriveItem } from '@/types';
 import { getDriveName } from '@/helpers/string-utils';
 import Year from '@/components/drives-list-item/year/Year';
@@ -28,7 +28,10 @@ export default function DrivesListItem({
         </div>
         <div className="flex items-center ml-auto">
           <Year year={year} />
-          <ChevronRightIcon className="text-gray-500 h-3 w-3 sm:h-4 sm:w-4 ml-4 sm:ml-4" />
+          <ChevronRightIcon
+            className="text-gray-500 h-3 w-3 sm:h-4 sm:w-4 ml-4 sm:ml-4"
+            data-testid="chevron-icon"
+          />
         </div>
       </div>
     </li>

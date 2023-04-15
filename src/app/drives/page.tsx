@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Image from 'next/image';
-import DrivesList from '@/components/drives-list';
-import Loader from '@/components/loader';
+import DrivesList from '@/components/drives-list/drives-list';
+import Loader from '@/components/loader/loader';
 import { getDrives } from '@/helpers/api-utils';
 import googleDriveLogo from '@/assets/google-drive-logo.png';
 
