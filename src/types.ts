@@ -13,13 +13,15 @@ export type DriveItem = {
   year?: Year;
   name: Name;
   department: Department;
-  type: 'Internal' | 'External';
+  type: DriveType;
   link: string;
   image?: string;
   description?: string;
 };
 
-type Department =
+export type Department =
   | 'Software Engineering'
   | 'Electrical Engineering'
   | 'Mechanical Engineering';
+
+export type DriveType = 'Internal' | 'External';

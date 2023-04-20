@@ -22,7 +22,13 @@ export default function Navbar() {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center mr-8">
               <Link href="/">
-                <Image alt="lmd" className="h-10 w-auto" src={appLogo} />
+                <Image
+                  alt="lmd"
+                  className="h-10 w-auto"
+                  height={40}
+                  src={appLogo}
+                  width={40}
+                />
               </Link>
             </div>
             <NavigationLinks links={navigationLinks} platform="desktop" />
