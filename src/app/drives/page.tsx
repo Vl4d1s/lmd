@@ -20,7 +20,9 @@ export default async function Page() {
             <Image
               alt="Image description"
               className="mr-2 h-8 w-8 sm:h-12 sm:w-12"
+              height={48}
               src={googleDriveLogo}
+              width={48}
             />
             <div>
               <h2 className="text-base sm:text-lg font-semibold">Drives</h2>

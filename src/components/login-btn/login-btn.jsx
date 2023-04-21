@@ -12,7 +12,9 @@ export default function LoginBtn() {
         <Image
           alt="Profile"
           className="w-10 h-10 rounded-full mr-2"
+          height={40}
           src={session.user.image}
+          width={40}
         />
         <p className="text-sm font-medium text-gray-900">{session.user.name}</p>
         <button
