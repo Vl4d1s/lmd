@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@types/cookie": "^0.5.1",
     "@types/jest": "^29.5.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",

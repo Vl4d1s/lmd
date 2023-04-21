@@ -1,7 +1,6 @@
 import { ChangeEvent, ChangeEventHandler, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { Department, DriveType } from '@/types';
-import { Session } from 'next-auth/src';
 
 interface UseDriveFormProps {
   initialValues?: {
@@ -15,7 +14,7 @@ interface UseDriveFormProps {
 }
 
 interface UseDriveFormResult {
-  session: Session | null;
+  session: any;
   firstName: string;
   lastName: string;
   driveType: DriveType;
