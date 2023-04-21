@@ -1,103 +1,21 @@
 'use client';
 
-import { useState } from 'react';
-import { useSession } from 'next-auth/react';
-import { Department, DriveType } from '@/types';
+import useDriveForm from '@/hooks/useDriveForm';
 
 export default function Example() {
-  const { data: session } = useSession();
-
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [driveType, setDriveType] = useState<DriveType>('Internal');
-  const [department, setDepartment] = useState<Department>(
-    'Software Engineering'
-  );
-  const [driveLink, setDriveLink] = useState('');
-  const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-
-    const newErrors: { [key: string]: string } = {};
-    if (!firstName) {
-      newErrors.firstName = 'First name is required';
-    }
-    if (!lastName) {
-      newErrors.lastName = 'Last name is required';
-    }
-    if (!driveLink || !isValidURL(driveLink)) {
-      newErrors.driveLink = 'Valid drive link is required';
-    }
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    function isValidURL(str: string) {
-      try {
-        new URL(str);
-        return true;
-      } catch (error) {
-        return false;
-      }
-    }
-
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        to: session?.user?.email,
-        subject: 'New drive to check',
-        text: `${firstName} ${lastName} want to add:\nDrive: ${driveLink}\nDepartment: ${department}\nDrive type: ${driveType}\nMessage: ${message}`,
-      }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-    handleClearForm();
-    alert(data?.message);
-  };
-
-  const handleFirstNameChange = (event: any) => {
-    setFirstName(event.target.value);
-    setErrors(prevErrors => ({ ...prevErrors, firstName: '' }));
-  };
-
-  const handleLastNameChange = (event: any) => {
-    setLastName(event.target.value);
-    setErrors(prevErrors => ({ ...prevErrors, lastName: '' }));
-  };
-
-  const handleDriveTypeChange = (event: any) => {
-    setDriveType(event.target.value);
-  };
-
-  const handleDepartmentChange = (event: any) => {
-    setDepartment(event.target.value);
-  };
-
-  const handleDriveLinkChange = (event: any) => {
-    setDriveLink(event.target.value);
-    setErrors(prevErrors => ({ ...prevErrors, driveLink: '' }));
-  };
-
-  const handleMessageChange = (event: any) => {
-    setMessage(event.target.value);
-  };
-
-  const handleClearForm = () => {
-    setFirstName('');
-    setLastName('');
-    setDriveType('Internal');
-    setDepartment('Software Engineering');
-    setDriveLink('');
-    setMessage('');
-  };
+  const {
+    session,
+    firstName,
+    lastName,
+    driveType,
+    department,
+    driveLink,
+    message,
+    errors,
+    handleInputChange,
+    handleClearForm,
+    handleSubmit,
+  } = useDriveForm({});
 
   if (!session?.user) {
     return (
@@ -138,7 +56,7 @@ export default function Example() {
                       } block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                       id="first-name"
                       name="first-name"
-                      onChange={handleFirstNameChange}
+                      onChange={handleInputChange}
                       type="text"
                       value={firstName}
                     />
@@ -165,7 +83,7 @@ export default function Example() {
                       } block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                       id="last-name"
                       name="last-name"
-                      onChange={handleLastNameChange}
+                      onChange={handleInputChange}
                       type="text"
                       value={lastName}
                     />
@@ -190,7 +108,7 @@ export default function Example() {
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       id="drive-type"
                       name="drive-type"
-                      onChange={handleDriveTypeChange}
+                      onChange={handleInputChange}
                       value={driveType}
                     >
                       <option value="Internal">Internal</option>
@@ -212,7 +130,7 @@ export default function Example() {
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       id="department"
                       name="department"
-                      onChange={handleDepartmentChange}
+                      onChange={handleInputChange}
                       value={department}
                     >
                       <option value="Software Engineering">
@@ -243,7 +161,7 @@ export default function Example() {
                       } block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                       id="drive-link"
                       name="drive-link"
-                      onChange={handleDriveLinkChange}
+                      onChange={handleInputChange}
                       type="text"
                       value={driveLink}
                     />
@@ -261,19 +179,14 @@ export default function Example() {
                   >
                     Message
                   </label>
-                  <div className="mt-2">
-                    <textarea
-                      autoComplete="message"
-                      className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      id="message"
-                      name="message"
-                      onChange={event => {
-                        const value = event.target.value.slice(0, 250);
-                        handleMessageChange({ target: { value } });
-                      }}
-                      value={message}
-                    />
-                  </div>
+                  <textarea
+                    autoComplete="message"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    id="message"
+                    name="message"
+                    onChange={handleInputChange}
+                    value={message}
+                  />
                 </div>
               </div>
             </div>
