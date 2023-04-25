@@ -136,6 +136,7 @@ export default function Example() {
                       <option value="Software Engineering">
                         Software Engineering
                       </option>
+                      <option value="Computer Science">Computer Science</option>
                       <option value="Electrical Engineering">
                         Electrical Engineering
                       </option>
