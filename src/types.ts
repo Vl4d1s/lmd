@@ -22,6 +22,7 @@ export type DriveItem = {
 export type Department =
   | 'Software Engineering'
   | 'Electrical Engineering'
-  | 'Mechanical Engineering';
+  | 'Mechanical Engineering'
+  | 'Computer Science';
 
 export type DriveType = 'Internal' | 'External';
