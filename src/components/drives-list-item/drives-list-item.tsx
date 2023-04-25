@@ -24,7 +24,7 @@ export default function DrivesListItem({
           <Avatar image={image} name={name} />
           <div className="ml-2 sm:ml-4">
             <div className="text-sm sm:text-base">{driveName}</div>
-            <div className="text-sm sm:text-base text-gray-500">
+            <div className="text-xs sm:text-sm text-gray-500">
               {department} • {type}
             </div>
             <div className="text-sm sm:text-base text-gray-500"></div>
