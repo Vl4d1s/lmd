@@ -1,19 +1,26 @@
-'use client';
-
 import Link from 'next/link';
 import { NavigationLink } from '@/configurations/navigation-links';
 import { useState } from 'react';
 
 export type NavigationLinksProps = {
   links: NavigationLink[];
+  onClick?: () => void;
   platform: 'desktop' | 'mobile';
 };
 
-const NavigationLinks = ({ links, platform }: NavigationLinksProps) => {
+const NavigationLinks = ({
+  links,
+  onClick,
+  platform,
+}: NavigationLinksProps) => {
   const [activeLink, setActiveLink] = useState(links[0].href);
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
+
+    if (platform === 'mobile' && onClick) {
+      onClick();
+    }
   };
 
   return platform === 'mobile' ? (
