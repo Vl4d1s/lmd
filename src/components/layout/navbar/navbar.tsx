@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200">
+    <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -38,8 +36,7 @@ export default function Navbar() {
             <button
               aria-expanded="false"
               aria-label="Main menu"
-              className="ml-4 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900
-          hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition duration-150 ease-in-out sm:hidden"
+              className="ml-4 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-900 transition duration-150 ease-in-out sm:hidden"
               onClick={toggleMobileMenu}
               type="button"
             >
