@@ -1,6 +1,7 @@
 'use client';
 
 import { SessionProvider } from 'next-auth/react';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import Container from '@/components/layout/container';
 import Navbar from '@/components/layout/navbar/navbar';
@@ -13,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Analytics />
       <body className="flex flex-col min-h-screen">
         <SessionProvider>
           <header>
