@@ -14,7 +14,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Analytics />
       <body className="flex flex-col min-h-screen">
         <SessionProvider>
           <header>
@@ -25,6 +24,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </SessionProvider>
+        <Analytics />
       </body>
     </html>
   );
