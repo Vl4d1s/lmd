@@ -13,7 +13,7 @@ export default async function Page() {
   const drivesData = await getDrives();
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto pt-8">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="p-6 flex flex-col sm:flex-row ">
           <div className="flex items-center mb-2 sm:mb-0">
