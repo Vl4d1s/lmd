@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import appLogo from '@/assets/app-logo.png';
@@ -8,6 +8,23 @@ import LoginBtn from '@/components/login-btn/login-btn';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTransparent(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const navbarClasses = `fixed top-0 w-full border-b border-gray-200 z-50 ${
+    isTransparent ? 'bg-white bg-opacity-80' : 'bg-white'
+  }`;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -18,7 +35,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
+    <nav className={navbarClasses}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
