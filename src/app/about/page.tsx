@@ -36,20 +36,13 @@ export default function page() {
             never give up on their dreams.
           </p>
           <p className="text-lg font-medium my-4">
-            Furthermore, I am passionate about helping junior colleagues in the
-            software field, and I take great pride in mentoring and guiding them
-            through their first steps in this exciting and rapidly evolving
-            industry.
-          </p>
-          <p className="text-lg font-medium my-4">
-            Feel free to contact me on{' '}
             <a
-              className="text-blue-500"
-              href="https://www.linkedin.com/in/vladismarkin"
+              className="libutton inline-block py-1 px-4 rounded-full text-white bg-blue-500 font-sans"
+              href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=vladismarkin"
+              target="_blank"
             >
-              Linkedin
+              Follow on LinkedIn
             </a>
-            .
           </p>
         </div>
       </div>
