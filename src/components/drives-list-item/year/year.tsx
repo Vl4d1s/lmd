@@ -1,5 +1,5 @@
 import { getDriveYear } from '@/helpers/string-utils';
-import { Year } from '@/types';
+import type { Year } from '@/types';
 
 export default function Year({ year }: { year?: Year }) {
   if (!year) {

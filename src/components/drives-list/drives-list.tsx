@@ -23,13 +23,15 @@ export default function DrivesList({ drives }: DrivesListItemProps) {
 
   return (
     <ul className="divide-y divide-gray-300">
-      {drives.map((drive, index) => (
-        <DrivesListItem
-          drive={drive}
-          key={index}
-          onClick={() => onClickHandler(drive.link)}
-        />
-      ))}
+      {drives
+        .filter(drive => typeof drive.name === 'object')
+        .map((drive, index) => (
+          <DrivesListItem
+            drive={drive}
+            key={index}
+            onClick={() => onClickHandler(drive.link)}
+          />
+        ))}
     </ul>
   );
 }
